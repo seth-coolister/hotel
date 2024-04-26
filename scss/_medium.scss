@@ -1,0 +1,18 @@
+/* MAIN  */
+main {
+    #cards{
+        section{
+            grid-template-areas: 
+            "name name"
+            "img address"
+            "img phone"
+            "img description";
+            column-gap: 8px;
+            overflow: hidden;
+        }
+        h2{
+            text-align: left;
+            padding-left: 1rem;
+        }
+    }// end cards
+} // end main

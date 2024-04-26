@@ -1,0 +1,146 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* BODY  */
+body {
+	font-family: $defaultFont;
+	font-size: 16px;
+	font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+#pageWrapper{
+    position: relative;
+    overflow-x: hidden;
+}
+.moveOver>.content{transform: translateX(-180px);}
+.content{transition: transform 500ms ease;}
+
+/* HEADER  */
+header {
+    display: grid;
+    grid-template-columns: 51px auto 48px;
+    align-items: center;
+	padding: .5rem 2vw;
+	h1 {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        padding-left: .5rem;
+        color: $primaryColor;
+    }
+    button {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        align-self: start;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        text-align: right;
+        color: #333;
+    }//end button
+} // end header
+
+/* NAVIGATION STUFF GOES HERE  */
+nav {
+    background: lighten($menuColor, 15%);
+    width: 180px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    div {
+        display: block;
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 1.1rem;
+        background-color: #666;
+        color: white;
+    }
+    ul li a {
+        display: block;
+        padding: .9rem .5rem;
+        text-align: right;
+        border-bottom: 1px rgba(0,0,0,0.1) solid;
+        text-decoration: none;
+        color: #333;
+    }
+    ul li a:hover {
+        background-color: $secondaryColor;
+        color: #eee;
+    }
+    li.active a {
+        color: $primaryColor;
+        font-weight: $normalWeight;
+    }
+}
+
+
+
+/* MAIN  */
+main {
+    padding: .5rem 2vw;
+    h1{
+        font-size: 1.6rem;
+        
+        font-weight: $lightWeight;
+        color: $secondaryColor;
+    }
+    #cards{
+        section{
+            margin: 1rem 0;
+            display: grid;
+            grid-template-areas: "name" "img" "description" "address" "phone";
+            background-color: lighten($menuColor, 15%);
+            border-radius: 16px;
+        }
+        img{
+            grid-area: img;
+            width: 100%;
+            height: auto;
+        }
+        h2{
+            grid-area: name;
+            font-size: 1.2rem;
+            padding: 1rem 0;
+            color: $primaryColor;
+            text-align: center;
+            width: 100%;
+        }
+        address{
+            grid-area: address;
+            padding-left: 1rem;
+        }
+        a{
+            grid-area: phone;
+            padding: 0 0 1rem 1rem;
+        }
+        p{
+            grid-area: description;
+            padding: 1rem;
+        }
+        section:hover{
+            background-color: lighten($menuColor, 10%);
+            transition: background-color 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        }
+    }// end cards
+} // end main
+
+
+
+/* FOOTER  */
+#footerWrapper {background-color: #1b1b1b; }
+footer {
+    font-size: .85rem;
+	padding: 1rem 0;
+	color: #bbb;
+	text-align: center;
+	a{color: #eee;}
+}
+
+
+// img sizes: 450 x 337.5

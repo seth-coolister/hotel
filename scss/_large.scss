@@ -1,0 +1,49 @@
+header, nav, main {
+    max-width: 1240px;
+    margin: auto;
+}
+
+/* NAVIGATION STUFF GOES HERE  */
+#hamburgerBtn{display: none;}
+nav{
+    position: static;
+    transform: translateX(0);
+    width: auto;
+    div{display: none;}
+    ul{
+        display: flex;
+        margin-left: 2%;
+        border-left: 1px solid rgba(0,0,0,0.1);
+    }
+    ul li a{
+        border: none;
+        border-right: 1px solid rgba(0,0,0,0.1);
+        padding: .8rem 1.2rem;
+    }
+}
+
+main {
+    h1{
+        font-size: 2rem;
+        padding: 1rem 0;
+    }
+    #cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        section{
+            grid-template-areas: 
+            "name phone"
+            "img description"
+            "address description";
+            column-gap: 8px;
+            a{
+                padding: 1rem;
+                text-align: right;
+            }
+            address{
+                padding: 1rem;
+            }
+        }
+    }// end cards
+} // end main
