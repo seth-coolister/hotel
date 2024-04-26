@@ -20,7 +20,11 @@
     
     <div id="headerWrapper">
         <header>
-            <img src="images/logo1x.png" alt="logo">
+            <picture>
+                <source media="(min-width: 64rem)" srcset="images/logo3x.png">
+                <source media="(min-width: 35rem)" srcset="images/logo2x.png">
+                <img src="/images/logo1x.png" alt="logo" width="51px">
+            </picture>
             <h1>Hotel California</h1>
             <button id="hamburgerBtn">&#9776;</button>
         </header>
